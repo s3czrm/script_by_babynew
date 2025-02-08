@@ -1,10 +1,10 @@
 
 const $ = new Env("GOGOGOGO");
-let url = $request.url, headers = $request.headers;
+let url = $request.url;
 // yuheng基础上更改保留auth_key
 
 // X-Playback-Session-Id头部
-if (headers.hasOwnProperty("X-Playback-Session-Id")) {
+
     try {
         const notify = $.getdata("mp4");
         //console.log("Saved notify:", notify);
@@ -15,7 +15,7 @@ if (headers.hasOwnProperty("X-Playback-Session-Id")) {
     } catch (e) {
         console.error("An error occurred:", e);
     }
-}
+
 
 $.done({});
 
