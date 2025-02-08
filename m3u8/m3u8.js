@@ -2,14 +2,14 @@
 const $ = new Env("GOGOGOGO");
 let url = $request.url, headers = $request.headers;
 // yuheng基础上更改保留auth_key
-url = url.replace(/\/\/(?!long)[^\.]+\./, '//long.').replace(/\.m3u8/, '.m3u8');
+
 // X-Playback-Session-Id头部
 if (headers.hasOwnProperty("X-Playback-Session-Id")) {
     try {
-        const notify = $.getdata("m3u8");
+        const notify = $.getdata("mp4");
         //console.log("Saved notify:", notify);
         if (!notify || notify != url) {
-            $.setdata(url, "m3u8");
+            $.setdata(url, "mp4");
             $.msg("视频链接捕获成功", "点击此通知在线观看", "视频还没开始播放之前会通知1-4次", url);
         }
     } catch (e) {
